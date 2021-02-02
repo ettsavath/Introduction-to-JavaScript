@@ -95,15 +95,15 @@ Do the following:
    2. Use the received value to calculate the age in dog years (1 human year is equal to 7 dog years)
    3. Return the newly calculated age
 */
-let dogAge= prompt('enter number of years: ');
+let dogAges= prompt('enter number of years: ');
 
-function dogYears(humanYear,dogAge){
-  return humanYear * dogAge;
+function dogYears(humanYear,dogAges){
+  return humanYear * dogAges;
 
     /*add your code here*/
 }
 
-console.log('dog is: ' + dogYears(dogAge,7) + ' years old.');
+console.log('dog is: ' + dogYears(dogAges,7) + ' years old.');
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
