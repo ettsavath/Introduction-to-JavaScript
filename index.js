@@ -18,6 +18,15 @@ Do the following:
    HINT: no function required
 */
 
+let votingAge=  18
+function vote(){
+  return votingAge >= 18? 'true' : 'false';
+}
+
+console.log(vote());
+
+
+
 
 
 /*
@@ -31,7 +40,13 @@ Do the following:
    HINT: no function required
 */
 
+let firstVar=10;
+let secondVar=20;
+function callVar(){
+return secondVar===20? firstVar=15 : firstVar=10;
+}
 
+console.log(callVar());
 
 
 
@@ -46,7 +61,11 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+let year="1999";
+function year1999(year){
+return parseInt(year);
+}
+console.log( year1999(year));
 
 
 /*
@@ -58,9 +77,12 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
+
+function multiply(a,b){
+  return a*b;
     /*add your code here*/
   }
+console.log(multiply(3,3));
 
 
 
@@ -73,12 +95,15 @@ Do the following:
    2. Use the received value to calculate the age in dog years (1 human year is equal to 7 dog years)
    3. Return the newly calculated age
 */
+let dogAge= prompt('enter number of years: ');
 
-function dogYears(/*add your code here*/){
+function dogYears(humanYear,dogAge){
+  return humanYear * dogAge;
+
     /*add your code here*/
 }
 
-
+console.log('dog is: ' + dogYears(dogAge,7) + ' years old.');
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -107,11 +132,66 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
+
+let dog;
+let dogAge;
+let puppyAge;
+let dogWeight;
+let month=12;
+
+
+
+
+
+
+function hungryDog(){
+ dog = prompt(`Enter: 1 for Adult dog(more than 12months)\n
+Enter: 2 for puppy(12 months and under)`);
+
+while (dog >=3 ){
+  console.log('\nyou Enter an invalid number');
+  dog = prompt(`Enter: 1 for Adult dog(more than 12months)\n
+Enter: 2 for puppy(12 months and under)`);
+  }
+
+if (dog==1){
+  dogAge=prompt('Enter dog age:');
+  dogWeight=prompt('how much does the dog weight:');
+  if(dogWeight <= 5){
+    return `dog is ${dogAge} years old. \n and require ${dogWeight *.05} lbs of food`;
+  }
+  else if(dogWeight >= 6 && dogWeight <=10){
+    return `dog is ${dogAge} years old. \n and reqiure ${dogWeight * .04} lbs of food`;
+  }
+  else if (dogWeight >=11 && dogWeight <=15){
+    return `dog is ${dogAge} years old. \n and require ${dogWeight * .03} lbs of food`;
+  }
+  else {
+    return `dog is ${dogAge} years old. \n and require ${dogWeight * .02} lbs of foold`;
+  }
+}
+else if(dog==2){
+  puppyAge=prompt('Enter month of puppy:')
+
+  if (puppyAge>=2 && puppyAge <=4){
+    return `puppy is : ${puppyAge/month} old \n require ${puppyAge/month*.1}  lbs of food`;
+  }
+
+  else if(puppyAge>=4 && puppyAge<=7){
+return `puppy is : ${puppyAge/month} old \n require ${puppyAge/month*.05} lbs of food`;
+
+  }
+else if (puppyAge >=7 && puppyAge <=12){
+  return `puppy is : ${puppyAge/month} old \n require ${puppyAge/month*.04} lbs of food`;
+
+}
+}
+
+
     /*add your code here*/
   }
 
-
+console.log(hungryDog());
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -134,9 +214,54 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+const RPS= ['Rock','Paper','Scissor'];
+let computerpick= Math.floor(Math.random()*3);
+let humanChoice= prompt(' Enter 1: Rock \n Enter 2: paper \n Enter 3: sissor.');
+
+let computerChoice=RPS[computerpick];
+let humanRPS=RPS[humanChoice -1];
+console.log(humanRPS);
+console.log(computerChoice);
+
+
 function game(user, computer){
-    /*add your code here*/
+ switch (user){
+   case '1':
+     if (computer==1){
+     return ' it\'s a tie';}
+     else if (computer==2){
+       return ' you lose!';
+     }
+     else {
+       return ' you win!';
+     }
+break;
+   case '2':
+if (computer==1){
+     return ' you win!';}
+     else if (computer==2){
+       return ' it\'s a tie';
+     }
+     else {
+       return ' you lose!';
+     }
+     break;
+   case '3':
+     if (computer==1){
+     return ' you lose!';}
+     else if (computer==2){
+       return ' you win!';
+     }
+     else {
+       return ' it\'s a tie';
+       break;
+     }
+ }
+     /*add your code here*/
 }
+  console.log(`you pick: ${humanRPS}  ComputerPick: ${computerChoice}` + game(humanChoice,computerpick+1));
+ 
+
   
   
 
@@ -151,10 +276,14 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+let kilo= prompt('Enter number of kilometers:');
+let mile= .621371;
 
+function miles(kilo,mile){
+    /*add your code here*/
+  return kilo*mile + ' miles.';
+  }
+console.log(miles(kilo,mile));
 
 
 //Task 5b - Feet to CM
@@ -164,11 +293,14 @@ Using the feet function below do the following:
   2. Convert the number of cm to feet
   3. Return number of feet
 */
+let cm=prompt('Enter number of centimeters:');
+let foot=.0328084;
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+
+function feet(cm,foot){
+   return cm*foot + ' feet.';
   }
- 
+ console.log(feet(cm,foot));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -180,11 +312,18 @@ Using the annoyingSong function below do the following:
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
+  let counter =prompt('Enter numbers of bottles');
+let bottleLeft;
+let i;
+function annoyingSong(beerbottle){
+  for(i=beerbottle;i>0;i--){
+console.log(`${i} bottles of soda on the wall, ${i} bootle of sode, take one down pass it
+ around `+ (i -1) + ` bottle of soda on the wall \n `);
 
-function annoyingSong(/*add your code here*/){
+  }
         /*add your code here*/
   }
-
+annoyingSong(counter);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -201,11 +340,32 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+let myGrade=prompt('Enter your grade:');
+
+function grade(score){
+  if(score >= 90 && score <= 100){
+    return 'you got an A';
   }
+  else if (score >= 80 && score <= 89) {
+    return 'you got a B';
+  }
+  else if (score >= 70 && score <= 79) {
+    return 'you got a C';
+  }
+  else if (score >=60 && score<=69){
+    return 'you got a D';
+  }
+  else if (score < 60){
+    return 'you got an F';
+  }
+    else{
+      return 'you enter an invalid number.'
+    }
+  }
+  /*Your Code here */
   
   
+  console.log(grade(myGrade));
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
